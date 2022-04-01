@@ -1,3 +1,11 @@
+.debug {
+  position: absolute;
+}
+
+.debug > p {
+  font-size: 12px;
+}
+
 .container {
   transform: translate(-50%, -50%);
   position: absolute;

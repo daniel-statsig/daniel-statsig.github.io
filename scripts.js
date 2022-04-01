@@ -7,6 +7,10 @@ if (userID == null) {
   localStorage.setItem("user_id", userID);
 }
 
+window.onload = () => {
+  document.getElementById("user-id").innerHTML = userID;
+};
+
 (async () => {
   await statsig.initialize(
     "client-wdUXwN4xPgHevlVNQbmGAKBWIJdPDot4LXyVRf0aBGJ",
@@ -57,4 +61,9 @@ function onPick(playerIndex) {
   if (layer.get("scoreboard_enabled", false)) {
     document.getElementById("scoreboard").innerHTML = "Your Score: " + score;
   }
+}
+
+function reroll() {
+  localStorage.removeItem("user_id");
+  window.location.reload();
 }

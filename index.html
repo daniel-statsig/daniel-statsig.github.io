@@ -7,6 +7,7 @@
   <script src="https://cdn.jsdelivr.net/npm/statsig-js@4.13.0/build/statsig-prod-web-sdk.min.js"></script>
 
   <script src="scripts.js"></script>
+
 </head>
 
 <body>
@@ -15,6 +16,13 @@
     <p id="result-text">...</p>
     <div id="actions"></div>
     <p id="scoreboard"></p>
+  </div>
+
+  <div class="debug">
+    <p id="user-id"></p>
+    <button onclick="reroll()">
+      Reroll User ID
+    </button>
   </div>
 </body>
 
