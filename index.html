@@ -1,88 +1,20 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>R P S</title>
+  <link rel="stylesheet" href="styles.css">
 
+  <!-- Statsig JS -->
   <script src="https://cdn.jsdelivr.net/npm/statsig-js@4.13.0/build/statsig-prod-web-sdk.min.js"></script>
 
-  <style>
-    .container {
-      transform: translate(-50%, -50%);
-      position: absolute;
-      left: 50%;
-      top: 50%;
-    }
-
-    p {
-      text-align: center;
-      font-size: 32px;
-      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-      font-weight: 700;
-    }
-
-    #result-text {
-      font-size: 40px;
-      font-weight: 900;
-    }
-
-    .button {
-      outline: none;
-      border: none;
-      background: none;
-      font-size: 60px;
-      cursor: pointer;
-      border-radius: 100px;
-      padding: 10px 20px;
-    }
-
-    .button:hover {
-      background-color: rgba(0, 0, 0, 0.133);
-    }
-  </style>
-
-  <script>
-    statsig.initialize(
-      'client-95ppRM28vRT2Z2hUwkJNwgmQwd9s57S2rwcWDNspOl4',
-      { userID: 'some_user_id' },
-    );
-
-    function onPick(playerIndex) {
-      const moves = ['✊', '🖐', '✌'];
-      const randomMove = moves[Math.floor(Math.random() * moves.length)];
-
-      const cpuIndex = moves.indexOf(randomMove);
-      const loseIndex = (playerIndex + 1) % moves.length;
-
-
-      let result = "Won";
-      if (cpuIndex === playerIndex) {
-        result = "Tied"
-      } else if (cpuIndex === loseIndex) {
-        result = "Lost"
-      }
-
-      statsig.logEvent('game_played', result);
-
-      document.getElementById('computer-move-text').innerHTML = "Computer picked " + randomMove
-      document.getElementById('result-text').innerHTML = "You " + result
-    }
-  </script>
-
+  <script src="scripts.js"></script>
 </head>
 
 <body>
-
   <div class="container">
     <p id="computer-move-text">Pick a Move</p>
     <p id="result-text">...</p>
-    <div>
-      <button onclick="onPick(0)" class="button">✊</button>
-      <button onclick="onPick(1)" class="button">🖐</button>
-      <button onclick="onPick(2)" class="button">✌</button>
-    </div>
+    <div id="actions"></div>
+    <p id="scoreboard"></p>
   </div>
 </body>
 

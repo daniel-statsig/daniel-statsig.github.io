@@ -1,0 +1,33 @@
+.container {
+  transform: translate(-50%, -50%);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}
+
+p {
+  text-align: center;
+  font-size: 32px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-weight: 700;
+}
+
+#result-text {
+  font-size: 40px;
+  font-weight: 900;
+}
+
+.button {
+  outline: none;
+  border: none;
+  background: none;
+  font-size: 60px;
+  cursor: pointer;
+  border-radius: 100px;
+  padding: 10px 20px;
+}
+
+.button:hover {
+  background-color: rgba(0, 0, 0, 0.133);
+}
