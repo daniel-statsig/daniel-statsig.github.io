@@ -1,11 +1,17 @@
 let moves = ["✊", "🖐", "✌"];
 let score = 0;
 
+let userID = localStorage.getItem("user_id");
+if (userID == null) {
+  userID = Math.random().toString(36).slice(-6);
+  localStorage.setItem("user_id", userID);
+}
+
 (async () => {
   await statsig.initialize(
     "client-wdUXwN4xPgHevlVNQbmGAKBWIJdPDot4LXyVRf0aBGJ",
     {
-      userID: "dloomb",
+      userID,
     }
   );
 
